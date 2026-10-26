@@ -1,0 +1,196 @@
+
+/* OBSERVAÇÕES:
+ --> HEADER é a caixa de cima (com links home, about, etc...)
+ --> MAIN é a caixa principal (caixa com todo o conteúdo da página) */
+
+
+
+
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+header {
+    margin: 44px 0 144px 76px;
+}
+
+.link-header {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #989D9C;
+    cursor: pointer;
+    margin-right: 23px;
+}
+
+.button-header {
+    width: 130px;
+    height: 41px;
+    background: #665AE1;
+    border-radius: 20.5px;
+     cursor: pointer;
+    border: none;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #ffffff;
+
+}
+
+.logo-image {
+    width: 568px;
+    height: 500px;
+    margin: 125px;
+    display: inline-block;
+}
+
+section {
+    display: inline-block;
+    margin-left: 86px;
+}
+
+h1 {
+    font-weight: black;
+    font-size: 100px;
+    line-height: 122px;
+    color: #515151;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 58px;
+    line-height: 71px;
+    color: #515151;
+}
+
+p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #848484;
+    width: 515px;
+    margin-bottom: 65px;
+    margin-top: 32px;
+
+}
+
+.button-explore {
+    width: 239px;
+    height: 64px;
+    background: #ADFF00;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-weight: bold;
+    font-size: 26.02px;
+    line-height: 29px;
+    color: #000000;
+
+}
+
+
+
+
+
+    /* Diferença entre <div> e <section> */
+/* Se o bloco representar um tema com contexto e conteúdo estrutural da página, utilize <section>.
+
+Se o bloco servir apenas para efeitos visuais, organização de layout ou aplicação de classes de estilo, 
+utilize <div>.*/
+
+/* ==========================================================================
+   VERSÃO RESPONSIVA (MOBILE / TABLETS ATÉ 900PX)
+   ========================================================================== */
+
+@media screen and (max-width: 900px) {
+
+    /* -------------------------------------------------------------------------
+       1. ESTRUTURA GERAL DA PÁGINA
+       ------------------------------------------------------------------------- */
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Impede que a tela balance para as laterais */
+        text-align: center; /* Garante que todo o fluxo de elementos fique centralizado */
+    }
+
+    main {
+        width: 100%;
+        display: block;     /* Garante que o container principal ocupe a largura total */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* -------------------------------------------------------------------------
+       2. CABEÇALHO (HEADER)
+       ------------------------------------------------------------------------- */
+    header {
+        /* No modelo mobile, o cabeçalho inteiro (links e botão de login) não existe */
+        display: none;
+    }
+
+    /* -------------------------------------------------------------------------
+       3. ILUSTRAÇÃO (LOGO-IMAGE)
+       ------------------------------------------------------------------------- */
+    .logo-image {
+        display: block;      /* Deixa de ser inline-block e ganha linha própria */
+        width: 85%;          /* Ocupa 85% da largura da tela do celular */
+        max-width: 320px;    /* Trava de segurança para a imagem não ficar gigante em telas maiores */
+        height: auto;        /* FUNDAMENTAL: recalcula a altura proporcionalmente para não achatar o desenho */
+        margin: 40px auto 20px auto; /* 40px de respiro no topo e "auto" nas laterais para centralizar */
+    }
+
+    /* -------------------------------------------------------------------------
+       4. SEÇÃO DE CONTEÚDO (SECTION)
+       ------------------------------------------------------------------------- */
+    section {
+        display: block;      /* Passa a se comportar como bloco ocupando a largura total */
+        width: 100%;
+        margin-left: 0;      /* Zera a margem esquerda de 86px do desktop */
+        margin-top: 0;
+        text-align: center;  /* Centraliza todos os textos e o botão */
+    }
+
+    /* -------------------------------------------------------------------------
+       5. TÍTULOS (H1 E H2)
+       ------------------------------------------------------------------------- */
+    h1 {
+        font-size: 38px;     /* Reduz a fonte de 100px para um tamanho adequado ao celular */
+        line-height: 46px;   /* Ajusta o espaçamento entre as linhas proporcionalmente */
+        text-align: center;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 22px;     /* Reduz a fonte de 58px para equilibrar visualmente com o H1 */
+        line-height: 28px;
+        margin-top: 8px;     /* Pequeno respiro entre o H1 e o H2 */
+        margin-bottom: 25px; /* Afasta o H2 do botão que vem logo abaixo */
+        text-align: center;
+    }
+
+    /* -------------------------------------------------------------------------
+       6. PARÁGRAFO (P)
+       ------------------------------------------------------------------------- */
+    p {
+        /* No design mobile da aula/Figma, o parágrafo longo é omitido */
+        display: none;
+    }
+
+    /* -------------------------------------------------------------------------
+       7. BOTÃO DE AÇÃO (BUTTON-EXPLORE)
+       ------------------------------------------------------------------------- */
+    .button-explore {
+        display: block;      /* Permite centralizar facilmente com margin: auto */
+        margin: 0 auto 40px auto; /* "auto" centraliza e 40px dá respiro na base da página */
+        width: 200px;        /* Leve redução de 239px para 200px para caber com elegância */
+        height: 54px;        /* Altura proporcional para facilitar o toque na tela de toque */
+        font-size: 20px;     /* Fonte ajustada de 26px para 20px */
+    }
+}
