@@ -1,196 +1,167 @@
-
-/* OBSERVAÇÕES:
- --> HEADER é a caixa de cima (com links home, about, etc...)
- --> MAIN é a caixa principal (caixa com todo o conteúdo da página) */
-
-
-
+/* Font-size --> Tamanho da letra da fonte;
+    Font-weight --> Peso(espessura) da letra da fonte;
+    Line height --> Tamanho do espaçamento entre as palavras. */
 
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 header {
-    margin: 44px 0 144px 76px;
+    margin-top: 47px;
+    margin-left: 42px;
+    line-height: 32px;
 }
 
 .link-header {
-    font-weight: 600;
+     font-weight: 400;
     font-size: 24px;
-    line-height: 29px;
-    color: #989D9C;
+    line-height: 32px;
+    color: #17233D;
     cursor: pointer;
-    margin-right: 23px;
+    margin-right: 32px;
+    text-align: center;
+    letter-spacing: 0.875;
 }
 
 .button-header {
-    width: 130px;
-    height: 41px;
-    background: #665AE1;
-    border-radius: 20.5px;
+     width: 124px;
+    height: 51px;
+    background:#6FBF44;
+    border-radius: 6px;
      cursor: pointer;
-    border: none;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
+    border: 1px solid #4CB538;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
     color: #ffffff;
-
 }
 
-.logo-image {
-    width: 568px;
+.final-image {
+    width: 595.18px;
     height: 500px;
-    margin: 125px;
     display: inline-block;
+    vertical-align: top;
+       margin-top: 100px;
+    margin-left: 80px;
+    margin-right: 0;   
+    margin-bottom: 0;
 }
 
 section {
     display: inline-block;
-    margin-left: 86px;
+    vertical-align: top;
+    margin-left: 50px; 
+    margin-top: 100px;
 }
-
 h1 {
-    font-weight: black;
-    font-size: 100px;
-    line-height: 122px;
-    color: #515151;
-}
-
-h2 {
-    font-weight: 500;
-    font-size: 58px;
-    line-height: 71px;
-    color: #515151;
+    width: 582px;
+    height: 164px;
+      font-weight: 700;
+    font-size: 62px;
+    line-height: 80px;
+    color: #161A49;
 }
 
 p {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    color: #848484;
-    width: 515px;
-    margin-bottom: 65px;
-    margin-top: 32px;
-
+    font-size: 18px;
+    line-height:33px;
+    color: #4B505A;
+    
+    margin-bottom: 30px;
+    margin-top: 47px;
 }
 
-.button-explore {
-    width: 239px;
-    height: 64px;
-    background: #ADFF00;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    font-weight: bold;
-    font-size: 26.02px;
-    line-height: 29px;
-    color: #000000;
-
+.final-button {
+     cursor: pointer;
+     margin-top: 0px;
+     color: #6FBF44;
 }
-
-
-
-
-
-    /* Diferença entre <div> e <section> */
-/* Se o bloco representar um tema com contexto e conteúdo estrutural da página, utilize <section>.
-
-Se o bloco servir apenas para efeitos visuais, organização de layout ou aplicação de classes de estilo, 
-utilize <div>.*/
-
-/* ==========================================================================
-   VERSÃO RESPONSIVA (MOBILE / TABLETS ATÉ 900PX)
-   ========================================================================== */
+div {
+   display: inline-block;
+   margin-left: 85px;
+   width: 493px;
+}
 
 @media screen and (max-width: 900px) {
 
-    /* -------------------------------------------------------------------------
-       1. ESTRUTURA GERAL DA PÁGINA
-       ------------------------------------------------------------------------- */
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Impede que a tela balance para as laterais */
-        text-align: center; /* Garante que todo o fluxo de elementos fique centralizado */
-    }
-
-    main {
-        width: 100%;
-        display: block;     /* Garante que o container principal ocupe a largura total */
-        margin: 0;
-        padding: 0;
-    }
-
-    /* -------------------------------------------------------------------------
-       2. CABEÇALHO (HEADER)
-       ------------------------------------------------------------------------- */
+    /* 1. CABEÇALHO (HEADER): fica no topo e empurra o botão Sign up para a direita */
     header {
-        /* No modelo mobile, o cabeçalho inteiro (links e botão de login) não existe */
-        display: none;
-    }
-
-    /* -------------------------------------------------------------------------
-       3. ILUSTRAÇÃO (LOGO-IMAGE)
-       ------------------------------------------------------------------------- */
-    .logo-image {
-        display: block;      /* Deixa de ser inline-block e ganha linha própria */
-        width: 85%;          /* Ocupa 85% da largura da tela do celular */
-        max-width: 320px;    /* Trava de segurança para a imagem não ficar gigante em telas maiores */
-        height: auto;        /* FUNDAMENTAL: recalcula a altura proporcionalmente para não achatar o desenho */
-        margin: 40px auto 20px auto; /* 40px de respiro no topo e "auto" nas laterais para centralizar */
-    }
-
-    /* -------------------------------------------------------------------------
-       4. SEÇÃO DE CONTEÚDO (SECTION)
-       ------------------------------------------------------------------------- */
-    section {
-        display: block;      /* Passa a se comportar como bloco ocupando a largura total */
+        display: flex;
+        justify-content: flex-end; /* Encosta o botão à direita como no modelo */
         width: 100%;
-        margin-left: 0;      /* Zera a margem esquerda de 86px do desktop */
-        margin-top: 0;
-        text-align: center;  /* Centraliza todos os textos e o botão */
+        margin: 20px 0 0 0;        /* Remove as margens de 47px e 42px do desktop */
+        padding-right: 25px;       /* Afasta 25px do limite direito do ecrã */
     }
 
-    /* -------------------------------------------------------------------------
-       5. TÍTULOS (H1 E H2)
-       ------------------------------------------------------------------------- */
-    h1 {
-        font-size: 38px;     /* Reduz a fonte de 100px para um tamanho adequado ao celular */
-        line-height: 46px;   /* Ajusta o espaçamento entre as linhas proporcionalmente */
-        text-align: center;
+    .link-header {
+        display: none;             /* Esconde os links de texto no telemóvel */
+    }
+
+    .button-header {
+        display: block;
+        width: 90px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    /* 2. CONTEÚDO PRINCIPAL (MAIN): inverte o texto e a imagem */
+    main {
+        display: flex;
+        flex-direction: column-reverse; /* O SEGREDO: joga o texto para cima e a imagem para baixo */
+        align-items: center;            /* Garante tudo centrado na horizontal */
+        width: 100%;
         margin: 0;
+        padding: 0;
     }
 
-    h2 {
-        font-size: 22px;     /* Reduz a fonte de 58px para equilibrar visualmente com o H1 */
-        line-height: 28px;
-        margin-top: 8px;     /* Pequeno respiro entre o H1 e o H2 */
-        margin-bottom: 25px; /* Afasta o H2 do botão que vem logo abaixo */
+    /* 3. BLOCO DE TEXTO */
+    div {
+        display: block;
+        width: 100%;                    /* Destrava a largura de 493px do desktop */
+        margin-left: 0;                 /* Remove a margem esquerda de 85px */
         text-align: center;
     }
 
-    /* -------------------------------------------------------------------------
-       6. PARÁGRAFO (P)
-       ------------------------------------------------------------------------- */
-    p {
-        /* No design mobile da aula/Figma, o parágrafo longo é omitido */
-        display: none;
+    section {
+        display: block;
+        width: 100%;
+        margin: 20px 0 0 0;             /* Remove a margem esquerda de 50px */
+        text-align: center;
     }
 
-    /* -------------------------------------------------------------------------
-       7. BOTÃO DE AÇÃO (BUTTON-EXPLORE)
-       ------------------------------------------------------------------------- */
-    .button-explore {
-        display: block;      /* Permite centralizar facilmente com margin: auto */
-        margin: 0 auto 40px auto; /* "auto" centraliza e 40px dá respiro na base da página */
-        width: 200px;        /* Leve redução de 239px para 200px para caber com elegância */
-        height: 54px;        /* Altura proporcional para facilitar o toque na tela de toque */
-        font-size: 20px;     /* Fonte ajustada de 26px para 20px */
+    h1 {
+        width: auto;                    /* Destrava os 582px */
+        height: auto;                   /* Destrava os 164px */
+        font-size: 32px;
+        line-height: 40px;
+        margin: 0 20px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        margin: 15px 30px;
+        text-align: center;
+    }
+
+    .final-button {
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 auto 30px auto;       /* Dá espaço antes de começar a imagem */
+        text-align: center;
+    }
+
+    /* 4. ILUSTRAÇÃO (vai para o fundo) */
+    .final-image {
+        display: block;
+        width: 85%;
+        max-width: 320px;
+        height: auto;                   /* Mantém a proporção do desenho sem distorcer */
+        margin: 20px auto 30px auto;   /* Centra a imagem na tela */
     }
 }
